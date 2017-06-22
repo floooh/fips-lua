@@ -8,6 +8,7 @@ endif()
 fips_begin_lib(lua)
     fips_dir(lua)
     fips_files(
+        lua.h
         lapi.c
         lapi.h
         lauxlib.c
@@ -68,7 +69,6 @@ fips_begin_lib(lua)
         lzio.c
         lzio.h
     )
-    fips_src(lua NO_RECURSE)
 fips_end_lib()
 
 if (NOT FIPS_IMPORT)
