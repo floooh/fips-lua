@@ -1,0 +1,9 @@
+#
+# fips-lua
+#
+---
+exports:
+    header-dirs: [ . ]
+    modules:
+        lua: .
+
