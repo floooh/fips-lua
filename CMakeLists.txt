@@ -5,6 +5,9 @@ if (NOT FIPS_IMPORT)
     fips_setup(PROJECT lua)
 endif()
 
+# NOTE: the files lua.c and linit.c are not included, lua.c contains the main()
+# function, and linit.c would load all libs, instead create a local linit.c in
+# your own project, and just load the libs you need there!
 fips_begin_lib(lua)
     fips_dir(lua)
     fips_files(
@@ -30,7 +33,6 @@ fips_begin_lib(lua)
         lfunc.h
         lgc.c
         lgc.h
-        linit.c
         liolib.c
         llex.c
         llex.h
@@ -55,8 +57,6 @@ fips_begin_lib(lua)
         ltable.c
         ltable.h
         ltablib.c
-        ltests.c
-        ltests.h
         ltm.c
         ltm.h
         luaconf.h
