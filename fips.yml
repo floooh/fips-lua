@@ -3,7 +3,7 @@
 #
 ---
 exports:
-    header-dirs: [ . ]
+    header-dirs: [ lua ]
     modules:
         lua: .
 
