@@ -45,7 +45,6 @@ fips_begin_lib(lua)
         lobject.h
         lopcodes.c
         lopcodes.h
-        loslib.c
         lparser.c
         lparser.h
         lprefix.h
@@ -69,6 +68,9 @@ fips_begin_lib(lua)
         lzio.c
         lzio.h
     )
+    if (NOT FIPS_IOS AND NOT FIPS_EMSCRIPTEN AND NOT FIPS_ANDROID)
+        fips_files(loslib.c)
+    endif()
 fips_end_lib()
 
 if (NOT FIPS_IMPORT)
